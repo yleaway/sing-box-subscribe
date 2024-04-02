@@ -1,17 +1,9 @@
 {
   "log": {
-    "level": "debug",
+    "level": "warn",
     "timestamp": true
   },
   "experimental": {
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "ui",
-      "secret": "",
-      "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "direct",
-      "default_mode": "rule"
-    },
     "cache_file": {
       "enabled": true,
       "store_fakeip": true
@@ -43,69 +35,12 @@
         "address": "rcode://success"
       }
     ],
-    "rules": [
-      {
-        "rule_set": "geosite-category-ads-all",
-        "server": "block"
-      },
-      {
-        "outbound": "any",
-        "server": "dp",
-        "disable_cache": true
-      },
-      {
-        "rule_set": "geosite-cn",
-        "server": "dp"
-      },
-      {
-        "clash_mode": "direct",
-        "server": "dp"
-      },
-      {
-        "clash_mode": "global",
-        "server": "cf"
-      },
-      {
-        "inbound": "tun",
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip",
-        "rewrite_ttl": 1
-      }
-    ],
     "independent_cache": true
   },
-  "inbounds": [
-    {
-      "tag": "tun",
-      "type": "tun",
-      "inet4_address": "172.19.0.0/30",
-      "inet6_address": "fdfe:dcba:9876::0/126",
-      "stack": "system",
-      "auto_route": true,
-      "sniff": true,
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 7890
-        }
-      }
-    },
-    {
-      "tag": "mixed",
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 7890,
-      "sniff": true
-    }
-  ],
   "outbounds": [
     {
       "type": "direct",
-      "tag": "direct"
+      "tag": "Direct"
     },
     {
       "type": "dns",
@@ -113,7 +48,7 @@
     },
     {
       "type": "block",
-      "tag": "block"
+      "tag": "Block"
     },
     {
       "tag": "🧱 GFW",
@@ -261,19 +196,6 @@
     "final": "🐟 fish",
     "rules": [
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "port": 53
-          },
-          {
-            "protocol": "dns"
-          }
-        ],
-        "outbound": "dns-out"
-      },
-      {
         "rule_set": "geosite-category-ads-all",
         "outbound": "🛑 AdBlock"
       },
@@ -284,15 +206,6 @@
       {
         "clash_mode": "global",
         "outbound": "🧱 GFW"
-      },
-      {
-        "domain": [
-          "clash.razord.top",
-          "yacd.metacubex.one",
-          "yacd.haishan.me",
-          "d.metacubex.one"
-        ],
-        "outbound": "direct"
       },
       {
         "rule_set": "bm7-openai",
