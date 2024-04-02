@@ -105,7 +105,7 @@
   "outbounds": [
     {
       "type": "direct",
-      "tag": "Direct"
+      "tag": "direct"
     },
     {
       "type": "dns",
@@ -113,7 +113,7 @@
     },
     {
       "type": "block",
-      "tag": "Block"
+      "tag": "block"
     },
     {
       "tag": "🧱 GFW",
