@@ -37,7 +37,7 @@
     ],
     "independent_cache": true
   },
-    "inbounds": [
+  "inbounds": [
     {
       "tag": "tun",
       "type": "tun",
@@ -63,18 +63,6 @@
     }
   ],
   "outbounds": [
-    {
-      "type": "direct",
-      "tag": "direct"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
-    },
-    {
-      "type": "block",
-      "tag": "block"
-    },
     {
       "tag": "🧱 GFW",
       "type": "selector",
@@ -214,6 +202,18 @@
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 50
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "block",
+      "tag": "block"
     }
   ],
   "route": {
