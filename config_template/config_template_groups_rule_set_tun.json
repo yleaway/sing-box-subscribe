@@ -359,13 +359,6 @@
       {
         "rule_set": "geosite-cn",
         "outbound": "🎯 CN"
-      },
-      {
-        "inbound": [
-          "tun",
-          "mixed"
-        ],
-        "outbound": "loop"
       }
     ],
     "rule_set": [
