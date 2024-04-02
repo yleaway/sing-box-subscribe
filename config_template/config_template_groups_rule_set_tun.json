@@ -196,6 +196,10 @@
     "final": "🐟 fish",
     "rules": [
       {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
         "rule_set": "geosite-category-ads-all",
         "outbound": "🛑 AdBlock"
       },
