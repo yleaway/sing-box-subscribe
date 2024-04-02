@@ -105,7 +105,7 @@
   "outbounds": [
     {
       "type": "direct",
-      "tag": "direct"
+      "tag": "Direct"
     },
     {
       "type": "dns",
@@ -113,7 +113,7 @@
     },
     {
       "type": "block",
-      "tag": "block"
+      "tag": "Block"
     },
     {
       "tag": "🧱 GFW",
@@ -347,10 +347,6 @@
       {
         "rule_set": "bm7-direct",
         "outbound": "🎯 CN"
-      },
-      {
-        "ip_is_private": true,
-        "outbound": "direct"
       },
       {
         "rule_set": "geoip-cn",
