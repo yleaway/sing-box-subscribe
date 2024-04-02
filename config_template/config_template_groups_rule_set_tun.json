@@ -40,7 +40,7 @@
   "outbounds": [
     {
       "type": "direct",
-      "tag": "Direct"
+      "tag": "direct"
     },
     {
       "type": "dns",
@@ -48,7 +48,7 @@
     },
     {
       "type": "block",
-      "tag": "Block"
+      "tag": "block"
     },
     {
       "tag": "🧱 GFW",
@@ -198,14 +198,6 @@
       {
         "rule_set": "geosite-category-ads-all",
         "outbound": "🛑 AdBlock"
-      },
-      {
-        "clash_mode": "direct",
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "global",
-        "outbound": "🧱 GFW"
       },
       {
         "rule_set": "bm7-openai",
