@@ -75,6 +75,7 @@
         "rewrite_ttl": 1
       }
     ],
+    "final": "🐟 fish",
     "independent_cache": true,
     "strategy": "prefer_ipv4"
   },
