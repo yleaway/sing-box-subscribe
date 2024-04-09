@@ -73,10 +73,6 @@
         ],
         "server": "fakeip",
         "rewrite_ttl": 1
-      },
-      {
-        "rule_set": "geosite-geolocation-!cn",
-        "server": "cf"
       }
     ],
     "independent_cache": true,
