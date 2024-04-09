@@ -3,7 +3,7 @@
     "level": "warn",
     "timestamp": true
   },
-"experimental": {
+  "experimental": {
     "clash_api": {
       "external_controller": "127.0.0.1:9090",
       "external_ui": "ui",
@@ -12,9 +12,9 @@
       "external_ui_download_detour": "direct",
       "default_mode": "rule"
     },
-  "cache_file": {
-    "enabled": true,
-    "store_fakeip": true
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": true
     }
   },
   "dns": {
@@ -30,7 +30,7 @@
         "detour": "🧱 GFW"
       },
       {
-        "tag": "dp",
+        "tag": "ali",
         "address": "https://223.5.5.5/dns-query",
         "detour": "direct"
       },
@@ -43,7 +43,44 @@
         "address": "rcode://success"
       }
     ],
-    "independent_cache": true
+    "rules": [
+      {
+        "rule_set": "geosite-category-ads-all",
+        "server": "block"
+      },
+      {
+        "outbound": "any",
+        "server": "ali",
+        "disable_cache": true
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "ali"
+      },
+      {
+        "clash_mode": "direct",
+        "server": "ali"
+      },
+      {
+        "clash_mode": "global",
+        "server": "cf"
+      },
+      {
+        "inbound": "tun",
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "server": "cf"
+      }
+    ],
+    "independent_cache": true,
+    "strategy": "prefer_ipv4"
   },
   "inbounds": [
     {
