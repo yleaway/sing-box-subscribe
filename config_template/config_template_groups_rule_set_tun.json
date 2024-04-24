@@ -135,6 +135,14 @@
       ]
     },
     {
+      "tag": "Ⓜ️ Onedrive",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "{all}"
+      ]
+    },
+    {
       "tag": "Ⓜ️ Microsoft",
       "type": "selector",
       "outbounds": [
@@ -266,7 +274,10 @@
         "outbound": "dns-out"
       },
       {
-        "rule_set": "geosite-category-ads-all",
+        "rule_set": [
+          "geosite-category-ads-all",
+          "ip-ad"
+        ],
         "outbound": "🛑 AdBlock"
       },
       {
@@ -278,7 +289,10 @@
         "outbound": "▶️ Youtube"
       },
       {
-        "rule_set": ["ip-telegram","site-telegram"],
+        "rule_set": [
+          "ip-telegram",
+          "site-telegram"
+        ],
         "outbound": "💬 Telegram"
       },
       {
@@ -287,7 +301,7 @@
       },
       {
         "rule_set": "bm7-onedrive",
-        "outbound": "Ⓜ️ Microsoft"
+        "outbound": "Ⓜ️ Onedrive"
       },
       {
         "rule_set": "bm7-microsoft",
@@ -304,7 +318,10 @@
         "outbound": "🎮 Game"
       },
       {
-        "rule_set": "bm7-netflix",
+        "rule_set": [
+          "site-netflix",
+          "ip-netflix"
+        ],
         "outbound": "📺 Netflix"
       },
       {
@@ -404,10 +421,17 @@
         "download_detour": "direct"
       },
       {
-        "tag": "bm7-netflix",
+        "tag": "site-netflix",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/ycmmonkey/meta-rules-dat@sing/bm7/Netflix.srs",
+        "url": "https://raw.githubusercontent.com/yleaway/meta-rules-dat/sing/geo/geosite/netflix.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "ip-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/yleaway/meta-rules-dat/sing/geo/geoip/netflix.srs",
         "download_detour": "direct"
       },
       {
@@ -478,6 +502,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "ip-ad",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/yleaway/meta-rules-dat/sing/geo/geoip/ad.srs",
         "download_detour": "direct"
       }
     ]
