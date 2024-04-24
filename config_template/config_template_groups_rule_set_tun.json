@@ -278,7 +278,7 @@
         "outbound": "▶️ Youtube"
       },
       {
-        "rule_set": ["ip-telegram","site-telegram"]
+        "rule_set": ["ip-telegram","site-telegram"],
         "outbound": "💬 Telegram"
       },
       {
@@ -438,7 +438,7 @@
         "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
         "download_detour": "direct"
       },
-       {
+      {
         "tag": "site-telegram",
         "type": "remote",
         "format": "binary",
