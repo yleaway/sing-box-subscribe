@@ -278,7 +278,7 @@
         "outbound": "▶️ Youtube"
       },
       {
-        "rule_set": "bm7-telegram",
+        "rule_set": ["ip-telegram","site-telegram"]
         "outbound": "💬 Telegram"
       },
       {
@@ -432,10 +432,17 @@
         "download_detour": "direct"
       },
       {
-        "tag": "bm7-telegram",
+        "tag": "ip-telegram",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/ycmmonkey/meta-rules-dat@sing/bm7/Telegram.srs",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
+        "download_detour": "direct"
+      },
+       {
+        "tag": "site-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
         "download_detour": "direct"
       },
       {
