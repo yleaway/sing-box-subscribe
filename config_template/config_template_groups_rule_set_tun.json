@@ -270,7 +270,16 @@
     "final": "🐟 fish",
     "rules": [
       {
-        "protocol": "dns",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
         "outbound": "dns-out"
       },
       {
@@ -337,15 +346,11 @@
         "outbound": "🧱 GFW"
       },
       {
-        "rule_set": "bm7-direct",
-        "outbound": "🎯 CN"
-      },
-      {
-        "rule_set": "geoip-cn",
-        "outbound": "🎯 CN"
-      },
-      {
-        "rule_set": "geosite-cn",
+        "rule_set": [
+          "bm7-direct",
+          "geoip-cn",
+          "geosite-cn"
+        ],
         "outbound": "🎯 CN"
       }
     ],
