@@ -46,7 +46,9 @@
     "rules": [
       {
         "rule_set": "geosite-category-ads-all",
-        "server": "block"
+        "action": "reject",
+        "method": "default",
+        "no_drop": false
       },
       {
         "outbound": "any",
@@ -80,27 +82,17 @@
   },
   "inbounds": [
     {
-      "tag": "tun",
       "type": "tun",
-      "inet4_address": "172.19.0.0/30",
-      "inet6_address": "fdfe:dcba:9876::0/126",
-      "stack": "system",
+      "tag": "tun-in",
+      "interface_name": "tun.sbox",
+      "address": [
+        "172.18.18.1/24",
+        "fdfe:dcba:9876::1/112"
+      ],
+      "mtu": 1492,
       "auto_route": true,
-      "sniff": true,
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 7890
-        }
-      }
-    },
-    {
-      "tag": "mixed",
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 7890,
-      "sniff": true
+      "strict_route": true,
+      "stack": "system"
     }
   ],
   "outbounds": [
