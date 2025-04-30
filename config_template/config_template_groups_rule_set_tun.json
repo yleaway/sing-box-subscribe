@@ -25,13 +25,13 @@
 			{
 				"tag": "cf",
 				"type": "https",
-				"address": "8.8.8.8",
+				"server": "8.8.8.8",
 				"detour": "🧱 GFW"
 			},
 			{
 				"tag": "ali",
 				"type": "https",
-				"address": "223.5.5.5",
+				"server": "223.5.5.5",
 				"detour": "direct"
 			},
 			{
