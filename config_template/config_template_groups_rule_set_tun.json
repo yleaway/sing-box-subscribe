@@ -24,8 +24,8 @@
 		"servers": [
 			{
 				"tag": "cf",
-				"type": "tls",
-				"address": "1.1.1.1",
+				"type": "https",
+				"address": "8.8.8.8",
 				"detour": "🧱 GFW"
 			},
 			{
