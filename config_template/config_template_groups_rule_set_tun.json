@@ -201,14 +201,6 @@
 			]
 		},
 		{
-			"tag": "🛑 AdBlock",
-			"type": "selector",
-			"outbounds": [
-				"block",
-				"direct"
-			]
-		},
-		{
 			"tag": "🐟 fish",
 			"type": "selector",
 			"outbounds": [
@@ -268,13 +260,6 @@
 			{
 				"clash_mode": "Global",
 				"outbound": "🧱 GFW"
-			},
-			{
-				"rule_set": [
-					"geosite-category-ads-all",
-					"ip-ad"
-				],
-				"outbound": "🛑 AdBlock"
 			},
 			{
 				"rule_set": "bm7-openai",
