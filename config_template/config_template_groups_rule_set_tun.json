@@ -148,6 +148,13 @@
 			]
 		},
 		{
+			"tag": "🇬 Google",
+			"type": "selector",
+			"outbounds": [
+				"{all}"
+			]
+		},
+		{
 			"tag": "📺 Netflix",
 			"type": "selector",
 			"outbounds": [
@@ -268,6 +275,10 @@
 			{
 				"rule_set": "bm7-youtube",
 				"outbound": "▶️ Youtube"
+			},
+			{
+				"rule_set": "bm7-google",
+				"outbound": "🇬 Google"
 			},
 			{
 				"rule_set": [
@@ -423,6 +434,13 @@
 				"type": "remote",
 				"format": "binary",
 				"url": "https://testingcf.jsdelivr.net/gh/ycmmonkey/meta-rules-dat@sing/bm7/YouTube.srs",
+				"download_detour": "direct"
+			},
+			{
+				"tag": "bm7-google",
+				"type": "remote",
+				"format": "binary",
+				"url": "https://testingcf.jsdelivr.net/gh/ycmmonkey/meta-rules-dat@sing/bm7/Google.srs",
 				"download_detour": "direct"
 			},
 			{
