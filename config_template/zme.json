@@ -229,7 +229,7 @@
 		},
 		{
 			"tag": "♻️ URL Test",
-			"type": "selector",
+			"type": "urltest",
 			"outbounds": [
 				"direct",
 				"{all}"
