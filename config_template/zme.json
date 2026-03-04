@@ -203,7 +203,7 @@
 			]
 		},
 		{
-			"tag": "🔔 GooleFCM",
+			"tag": "🔔 GoogleFCM",
 			"type": "selector",
 			"outbounds": [
 				"direct",
