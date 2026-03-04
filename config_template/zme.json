@@ -348,10 +348,7 @@
 				"outbound": "🐦 Twitter"
 			},
 			{
-				"rule_set": [
-					"geoip-instagram",
-					"geosite-instagram"
-				],
+				"rule_set": "geosite-instagram",
 				"outbound": "📷 Instagram"
 			},
 			{
