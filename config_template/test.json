@@ -392,8 +392,8 @@
    },
    {
     "tag": "geosite-fakeipfilter",
-    "type": "source",
-    "format": "binary",
+    "type": "remote",
+    "format": "source",
     "url": "https://testingcf.jsdelivr.net/gh/qichiyuhub/rule@master/fakeipfilter.json",
     "download_detour": "direct"
    },
