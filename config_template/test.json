@@ -38,7 +38,7 @@
       },
       {
         "rule_set": "geosite-fakeipfilter",
-        "server": "remote_dns"
+        "server": "local_dns"
       },
       {
         "query_type": [
