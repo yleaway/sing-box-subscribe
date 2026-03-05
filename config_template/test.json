@@ -222,14 +222,6 @@
       ]
     },
     {
-      "tag": "⏳ FakeIP-Filter",
-      "type": "selector",
-      "outbounds": [
-        "{all}",
-        "direct"        
-      ]
-    },
-    {
       "tag": "🐟 Final",
       "type": "selector",
       "outbounds": [
@@ -399,10 +391,6 @@
           "geosite-cn"
         ],
         "outbound": "🇨🇳 China"
-      },
-      {
-        "rule_set": "geosite-fakeipfilter",
-        "outbound": "⏳ FakeIP-Filterr"
       }
     ],
     "rule_set": [
