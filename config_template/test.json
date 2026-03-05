@@ -9,7 +9,7 @@
         "tag": "remote_dns",
         "type": "tls",
         "server": "8.8.8.8",
-        "detour": "🧱 GFW"
+        "detour": "📺 Netflix"
       },
       {
         "tag": "local_dns",
@@ -33,7 +33,7 @@
         "server": "remote_dns"
       },
       {
-        "rule_set": "geosite-cn",
+        "rule_set": ["geosite-cn","geoip-cn"],
         "server": "local_dns"
       },
       {
@@ -215,6 +215,14 @@
       ]
     },
     {
+      "tag": "⏳ FakeIP-Filter",
+      "type": "selector",
+      "outbounds": [
+        "{all}",
+        "direct"        
+      ]
+    },
+    {
       "tag": "🐟 Final",
       "type": "selector",
       "outbounds": [
@@ -380,6 +388,10 @@
           "geosite-cn"
         ],
         "outbound": "🇨🇳 China"
+      },
+      {
+        "rule_set": "geosite-fakeipfilter",
+        "outbound": "⏳ FakeIP-Filterr"
       }
     ],
     "rule_set": [
