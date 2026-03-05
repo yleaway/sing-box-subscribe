@@ -33,7 +33,7 @@
         "server": "remote_dns"
       },
       {
-        "rule_set": ["geosite-cn","geoip-cn"],
+        "rule_set": "geosite-cn",
         "server": "local_dns"
       },
       {
