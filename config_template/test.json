@@ -110,6 +110,13 @@
       ]
     },
     {
+      "tag": "🐱 Github",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ]
+    },
+    {
       "tag": "💬 Telegram",
       "type": "selector",
       "outbounds": [
@@ -355,6 +362,10 @@
         "outbound": "▶️ YouTube"
       },
       {
+        "rule_set": "geosite-github",
+        "outbound": "🐱 Github"
+      },
+      {
         "rule_set": [
           "geoip-google",
           "geosite-google"
@@ -428,6 +439,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
         "download_detour": "direct"
       },
       {
