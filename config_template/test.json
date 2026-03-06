@@ -94,7 +94,7 @@
         "server": "fakeip"
       }
     ],
-    "final": "fakeip",
+    "final": "remote_dns",
     "independent_cache": true,
     "strategy": "ipv4_only",
     "reverse_mapping": true
