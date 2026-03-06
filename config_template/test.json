@@ -4,12 +4,38 @@
     "timestamp": true
   },
   "dns": {
-    "servers": [
+     "servers": [
+      {
+        "tag": "netflix_dns",
+        "type": "https",
+        "server": "1.1.1.1",
+        "path": "/dns-query",
+        "detour": "📺 Netflix"
+      },
+      {
+        "tag": "disney_dns",
+        "type": "https",
+        "server": "1.1.1.1",
+        "path": "/dns-query",
+        "detour": "🏰 DisneyPlus"
+      },
+      {
+        "tag": "openai_dns",
+        "type": "tls",
+        "server": "1.1.1.1",
+        "detour": "🤖 OpenAI"
+      },
+      {
+        "tag": "google_dns",
+        "type": "tls",
+        "server": "8.8.8.8",
+        "detour": "🔍 Google"
+      },
       {
         "tag": "remote_dns",
         "type": "tls",
-        "server": "8.8.8.8",
-        "detour": "📺 Netflix"
+        "server": "1.1.1.1",
+        "detour": "🧱 GFW"
       },
       {
         "tag": "local_dns",
@@ -21,31 +47,6 @@
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
         "inet6_range": "fc00::/18"
-      }
-    ],
-    "rules": [
-      {
-        "clash_mode": "direct",
-        "server": "local_dns"
-      },
-      {
-        "clash_mode": "global",
-        "server": "remote_dns"
-      },
-      {
-        "rule_set": "geosite-cn",
-        "server": "local_dns"
-      },
-      {
-        "rule_set": "geosite-fakeipfilter",
-        "server": "remote_dns"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip"
       }
     ],
     "final": "remote_dns",
