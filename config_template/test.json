@@ -4,7 +4,7 @@
     "timestamp": true
   },
   "dns": {
-     "servers": [
+    "servers": [
       {
         "tag": "netflix_dns",
         "type": "https",
@@ -41,6 +41,7 @@
         "tag": "local_dns",
         "type": "https",
         "server": "223.5.5.5"
+        "detour": "🇨🇳 China"
       },
       {
         "tag": "fakeip",
@@ -49,9 +50,53 @@
         "inet6_range": "fc00::/18"
       }
     ],
+    "rules": [
+      {
+        "rule_set": "geosite-netflix",
+        "server": "netflix_dns"
+      },
+      {
+        "rule_set": "geosite-disney",
+        "server": "disney_dns"
+      },
+      {
+        "rule_set": "geosite-openai",
+        "server": "openai_dns"
+      },
+      {
+        "rule_set": [
+          "geoip-google",
+          "geosite-google"
+        ],
+        "server": "google_dns"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "local_dns"
+      },
+      {
+        "rule_set": "geosite-fakeipfilter",
+        "server": "remote_dns"
+      },
+      {
+        "clash_mode": "direct",
+        "server": "local_dns"
+      },
+      {
+        "clash_mode": "global",
+        "server": "remote_dns"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
+      }
+    ],
     "final": "fakeip",
     "independent_cache": true,
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "reverse_mapping": true
   },
   "inbounds": [
