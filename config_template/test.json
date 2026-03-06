@@ -49,7 +49,7 @@
         "inet6_range": "fc00::/18"
       }
     ],
-    "final": "remote_dns",
+    "final": "fakeip",
     "independent_cache": true,
     "strategy": "prefer_ipv4",
     "reverse_mapping": true
