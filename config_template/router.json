@@ -125,6 +125,12 @@
       "listen_port": 7890
     },
     {
+      "type": "tproxy",
+      "tag": "tproxy-in",
+      "listen": "0.0.0.0",
+      "listen_port": 7892
+    }
+    {
       "type": "direct",
       "tag": "dns-in",
       "listen": "0.0.0.0",
