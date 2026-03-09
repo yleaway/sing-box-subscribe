@@ -129,7 +129,7 @@
       "tag": "tproxy-in",
       "listen": "0.0.0.0",
       "listen_port": 7892
-    }
+    },
     {
       "type": "direct",
       "tag": "dns-in",
