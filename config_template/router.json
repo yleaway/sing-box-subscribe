@@ -52,6 +52,17 @@
     ],
     "rules": [
       {
+        "rule_set": "geosite-fakeipfilter",
+        "server": "remote_dns"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
+      },
+      {
         "rule_set": "geosite-netflix",
         "server": "netflix_dns"
       },
@@ -75,23 +86,12 @@
         "server": "local_dns"
       },
       {
-        "rule_set": "geosite-fakeipfilter",
-        "server": "remote_dns"
-      },
-      {
         "clash_mode": "direct",
         "server": "local_dns"
       },
       {
         "clash_mode": "global",
         "server": "remote_dns"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip"
       }
     ],
     "final": "remote_dns",
