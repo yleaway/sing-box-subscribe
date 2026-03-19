@@ -53,7 +53,7 @@
     "rules": [
       {
         "rule_set": "geosite-fakeipfilter",
-        "server": "local_dns"
+        "server": "remote_dns"
       },
       {
         "query_type": [
@@ -103,6 +103,7 @@
     {
       "tag": "tun-in",
       "type": "tun",
+      "interface_name": "tun0",
       "address": [
         "172.19.0.0/30",
         "fdfe:dcba:9876::0/126"
@@ -641,7 +642,7 @@
       "store_rdrc": true
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:9090",
+      "external_controller": "0.0.0.0:9090",
       "external_ui": "ui",
       "secret": "",
       "external_ui_download_url": "https://gh-proxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
