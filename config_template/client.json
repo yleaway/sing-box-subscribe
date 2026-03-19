@@ -48,21 +48,12 @@
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
         "inet6_range": "fc00::/18"
-      },
-      {
-        "tag": "filter_dns_group",
-        "type": "parallel",
-        "servers": [
-          "local_dns",
-          "remote_dns"
-        ],
-        "strategy": "prefer_ipv4"
       }
     ],
     "rules": [
       {
         "rule_set": "geosite-fakeipfilter",
-        "server": "filter_dns_group"
+        "server": "local_dns"
       },
       {
         "query_type": [
