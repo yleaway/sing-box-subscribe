@@ -46,10 +46,8 @@
       {
       "tag": "filter_dns_group",
       "type": "parallel",
-      "nodes": [
-        "local_dns",
-        "remote_dns"
-        ]
+      "servers": [ "local_dns", "remote_dns" ],
+      "strategy": "prefer_ipv4"
       },
       {
         "tag": "fakeip",
