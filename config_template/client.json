@@ -611,7 +611,7 @@
     "cache_file": {
       "enabled": true,
       "store_fakeip": true,
-      "store_rdrc": true
+      "store_dns": true
     },
     "clash_api": {
       "external_controller": "0.0.0.0:9090",
