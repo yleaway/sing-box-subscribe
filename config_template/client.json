@@ -3,7 +3,6 @@
     "level": "warn",
     "timestamp": true
   },
- {
   "dns": {
     "servers": [
       {
