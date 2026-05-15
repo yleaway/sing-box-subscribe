@@ -3,57 +3,68 @@
     "level": "warn",
     "timestamp": true
   },
+ {
   "dns": {
     "servers": [
       {
-        "tag": "netflix_dns",
-        "type": "https",
-        "server": "1.1.1.1",
-        "path": "/dns-query",
-        "detour": "📺 Netflix"
+        "tag": "local",
+        "address": "local"
       },
       {
-        "tag": "disney_dns",
-        "type": "https",
-        "server": "1.1.1.1",
-        "path": "/dns-query",
-        "detour": "🏰 DisneyPlus"
+        "tag": "alidns",
+        "address": "https://dns.alidns.com/dns-query",
+        "address_resolver": "local"
       },
       {
-        "tag": "openai_dns",
-        "type": "tls",
-        "server": "1.1.1.1",
-        "detour": "🤖 OpenAI"
-      },
-      {
-        "tag": "google_dns",
-        "type": "tls",
-        "server": "8.8.8.8",
-        "detour": "🔍 Google"
-      },
-      {
-        "tag": "remote_dns",
-        "type": "tls",
-        "server": "1.1.1.1",
+        "tag": "ggdns",
+        "address": "https://dns.google/dns-query",
+        "address_resolver": "local",
         "detour": "🧱 GFW"
       },
       {
-        "tag": "local_dns",
-        "type": "https",
-        "server": "223.5.5.5",
-        "detour": "🇨🇳 China"
-      },
-      {
         "tag": "fakeip",
-        "type": "fakeip",
-        "inet4_range": "198.18.0.0/15",
-        "inet6_range": "fc00::/18"
+        "address": "fakeip"
       }
     ],
+    "hosts": {
+      "dns.alidns.com": [
+        "223.5.5.5",
+        "223.6.6.6"
+      ],
+      "dns.google": [
+        "8.8.8.8",
+        "8.8.4.4"
+      ]
+    },
+    "fakeip": {
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
     "rules": [
       {
+        "clash_mode": "direct",
+        "server": "local"
+      },
+      {
+        "clash_mode": "global",
+        "server": "ggdns"
+      },
+      {
         "rule_set": "geosite-fakeipfilter",
-        "server": "remote_dns"
+        "server": "ggdns"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "alidns"
+      },
+      {
+        "action": "evaluate",
+        "server": "alidns"
+      },
+      {
+        "match_response": true,
+        "rule_set": "geoip-cn",
+        "action": "respond"
       },
       {
         "query_type": [
@@ -61,43 +72,12 @@
           "AAAA"
         ],
         "server": "fakeip"
-      },
-      {
-        "rule_set": "geosite-netflix",
-        "server": "netflix_dns"
-      },
-      {
-        "rule_set": "geosite-disney",
-        "server": "disney_dns"
-      },
-      {
-        "rule_set": "geosite-openai",
-        "server": "openai_dns"
-      },
-      {
-        "rule_set": [
-          "geoip-google",
-          "geosite-google"
-        ],
-        "server": "google_dns"
-      },
-      {
-        "rule_set": "geosite-cn",
-        "server": "local_dns"
-      },
-      {
-        "clash_mode": "direct",
-        "server": "local_dns"
-      },
-      {
-        "clash_mode": "global",
-        "server": "remote_dns"
       }
     ],
-    "final": "remote_dns",
-    "strategy": "ipv4_only",
-    "reverse_mapping": true
-  },
+    "final": "ggdns",
+    "strategy": "prefer_ipv4"
+  }
+},
   "inbounds": [
     {
       "tag": "tun-in",
