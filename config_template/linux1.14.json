@@ -1,5 +1,4 @@
 {
-  "$schema": "https://sing-box.sagernet.org/schema.json",
   "dns": {
     "servers": [
       {"tag": "local", "type": "local", "prefer_go": true},
@@ -124,20 +123,17 @@
       "listen_port": 9090,
       "secret": "passwd",
       "dashboard": {
-        "enabled": true,
-        "path": "/etc/sing-box/dashboard"
+        "enabled": true
       }
     }
   ],
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "path": "/etc/sing-box/cache.db",
       "store_dns": true
     },
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
-      "external_ui": "/etc/sing-box/ui",
       "secret": "passwd",
       "default_mode": "Rule"
     }
